@@ -1,13 +1,13 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: boardgameNS
+  name: boardgamens
 ---
 apiVersion: apps/v1
 kind: Deployment # Kubernetes resource kind we are creating
 metadata:
   name: boardgame-deployment
-  namespace: boardgameNS
+  namespace: boardgamens
 spec:
   selector:
     matchLabels:
@@ -32,7 +32,7 @@ apiVersion: v1 # Kubernetes API version
 kind: Service # Kubernetes resource kind we are creating
 metadata: # Metadata of the resource kind we are creating
   name: boardgame-ssvc
-  namespace: boardgameNS
+  namespace: boardgamens
 spec:
   selector:
     app: boardgame
